@@ -1,6 +1,30 @@
 package migration
 
 const (
+	Offers = `CREATE TABLE IF NOT EXISTS offer_logs (
+		id serial PRIMARY KEY,
+		date_time timestamptz,
+		user_firstname text,
+		user_lastname text,
+		user_position text,
+		user_department text,
+		user_ip text,
+		pc_name text,
+		user_activity text,
+		abonent_ctn text,
+		sms_text text,
+		login text,
+		current_tariff text,
+		pre_tariff text,
+		offer text,
+		status text,
+		system text,
+		errcode text,
+		offers text,
+		request_type text,
+		offer_reward int
+	)`
+
 	Users = `CREATE TABLE IF NOT EXISTS users (
 		id serial PRIMARY KEY, 
 		first_name text NOT NULL, 

@@ -21,7 +21,7 @@ func main() {
 	}
 
 	defer db.Close()
-	_, err = db.Query(migration.Users)
+	_, err = db.Query(migration.Offers)
 	if err != nil {
 		log.Println("failed to run migration", err.Error())
 		return
