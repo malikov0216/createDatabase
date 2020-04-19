@@ -1,10 +1,10 @@
 package config
 
 const (
-	DbHost     = "localhost"
-	DbPort     = "5432"
+	DbHost     = "kz-dipapp07"
+	DbPort     = "5434"
 	DbName     = "postgres"
-	DbSchema   = "public"
-	DbUser     = "postgres"
-	DbPassword = "Mother1995"
+	DbSchema   = "dw_prod"
+	DbUser     = "digital_window"
+	DbPassword = "dw*18_19a!P"
 )

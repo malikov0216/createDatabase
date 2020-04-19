@@ -1,6 +1,63 @@
 package migration
 
 const (
+	CreateInteraction = `CREATE TABLE IF NOT EXISTS interactions (
+		id serial PRIMARY KEY,
+		login text,
+		phone text,
+		direction text,
+		interaction_type text,
+		source text,
+		reason1 text,
+		reason2 text,
+		reason3 text,
+		reason4 text,
+		title text,
+		notes text,
+		start_date text,
+		end_date text,
+		last_name text,
+		first_name text,
+		email text
+	)`
+	TwoFA = `CREATE TABLE IF NOT EXISTS tfa_users (
+		id serial PRIMARY KEY,
+		login text,
+		email text,
+		key text,
+		reg_date timestamptz,
+		last_success_date timestamptz,
+		last_unsuccess_date timestamptz,
+		unsuccess_auth_count int,
+		last_auth_type text,
+		block_date timestamptz
+	)`
+
+	Cti = `CREATE TABLE IF NOT EXISTS cti_logs (
+		id serial PRIMARY KEY,
+		date_time timestamptz,
+		method text,
+		ctn text,
+		login text,
+		call_id text,
+		call_type text,
+		call_origin text,
+		ivr_point text,
+		agent_id text,
+		skill_id text,
+		talk_duration int,
+		call_end_reason text,
+		target_skill_id text,
+		target_ivr_point text,
+		target_number text
+	)`
+
+	Socs = `CREATE TABLE IF NOT EXISTS socs (
+		id serial PRIMARY KEY,
+		soc_code text,
+		soc_desc text
+	)`
+
 	Offers = `CREATE TABLE IF NOT EXISTS offer_logs (
 		id serial PRIMARY KEY,
 		date_time timestamptz,
